@@ -413,3 +413,79 @@ a {
 .popular .foot .btn-book:hover {
   background-color: var(--primary-color);
 }
+
+/* =================================feedback========================= */
+.feedback {
+  margin-top: 135px;
+  background: #2e2100;
+  padding: 96px 0;
+}
+
+.feedback-list {
+  display: flex;
+  overflow: hidden;
+}
+
+/* LƯU Ý CHO FLEX-SHRINK:
+      Khi không xác định chiều rộng cho mỗi item thì khi giá trị flex-shrink = 0 (không co lại) thì nó sẽ kéo dài chiều rộng dựa vào content size (content dài bao nhiêu sẽ rộng bấy nhiêu) => vỡ giao diện ban đầu
+      Do đó khi dùng flex-shrink = 0 thì cần xác định lại chiều rộng phần tử đề flexbox dựa vào xác định, có thể dùng width hoặc flex-basis
+*/
+.feedback-item {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.feedback-item .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.feedback-item .infor .member-name {
+  color: #f7f7f7;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42;
+  padding-top: 18px;
+}
+
+.feedback-item .infor .desc {
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86;
+  padding-top: 4px;
+}
+
+.feedback-item .dots {
+  display: flex;
+  padding-top: 28px;
+  gap: 6px;
+}
+
+.feedback-item .dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #634700;
+  cursor: pointer;
+}
+
+.feedback-item .dot.active {
+  background: var(--primary-color);
+  cursor: default;
+}
+
+.feedback .content {
+  width: 66%;
+  margin-left: auto;
+}
+
+.feedback-item blockquote {
+  color: #fff;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.54;
+}
