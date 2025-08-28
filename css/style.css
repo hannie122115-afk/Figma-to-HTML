@@ -335,7 +335,8 @@ a {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
-.popular-top .control-btn:hover {
+.popular-top .control-btn:hover,
+.blog .infor .btn-read:hover {
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
@@ -560,4 +561,118 @@ a {
         x y : ngang dọc
         center, left, right, top, bottom
   */
+}
+
+/* =================================block========================= */
+.blog {
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #fffcf4;
+}
+
+.blog .blog-top {
+  text-align: center;
+}
+
+.blog .blog-top .desc {
+  width: 448px;
+  color: #696262;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  margin: 16px auto 0;
+}
+
+.blog .blog-list {
+  display: flex;
+  margin-top: 55px;
+  gap: 30px;
+  overflow: hidden;
+}
+.blog .item {
+  width: calc(33.33% - 20px);
+  /* vì kíhc thước độ rộng mỗi item chia ba ra là 33.33% nhưng khoảng cách giữa mỗi item (gap) lại là 30px vậy nên dùng calc để vẫn giữ kích thước 33.33% như ban đầu nhưng vẫn đảm bảo cách nhau 30px. Có hai khoảng cách, mỗi khoảng cách là 30px => 30*2=60 / 3 = 20px vậy mỗi item hụt đi 20px nên dùng hàm calc như sau calc(33.33% - 20px) */
+  border-radius: 16px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.blog .item:hover {
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.05);
+}
+.blog .item .thumb {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: 100% 18%;
+  border-radius: 16px 16px 0 0;
+}
+
+.blog .item .infor {
+  padding: 20px 20px 28px;
+}
+
+.blog .infor .date {
+  position: relative;
+  padding-bottom: 12px;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86;
+  display: flex;
+  align-items: center;
+}
+
+.blog .infor .date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  margin-right: 4px;
+}
+
+.blog .infor .date::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  right: -27px;
+  /* luôn lệch 27px so với cha (theo yc thiết kế) */
+  height: 1px;
+  border-radius: 0.5px;
+  background: #e2dfda;
+}
+
+.blog .infor .tiltle {
+  color: #171100;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.75;
+  margin-top: 12px;
+}
+
+.blog .infor .btn-read {
+  margin-top: 12px;
+  font-size: 1.4rem;
+}
+
+.blog .dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.blog .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
+}
+
+.blog .dot.active {
+  background-color: var(--primary-color);
+  cursor: default;
 }
